@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <title>TERMLEX REGISTRATION</title> 
+<style>
+
+label{
+    margin: 1%;
+    font-size: 175%;
+}
+
+body{
+    background-color: rgb(211, 208, 208);
+}
+</style>
+</head>
+
+  <body style="text-align: center;"> 
+        <h1 style="color: rgb(173, 8, 8); font-size: 300%;">REGISTER  AT  TERMLEX</h1>
+
+        <form style="color: darkblue;">
+            
+
+            <div ng-app="myForm" ng-controller="click">
+
+                
+                <img src="D:\htmlvalidation\termlex.png"/>
+                <br>
+                <br>
+
+                <label >Username:</label>
+                <input type="text" name="userName" placeholder="Your name" size="35" required />
+                <br>
+                <br>
+                
+                
+                <label >Email-Id:</label>   
+                <input type="email" name="emailId" placeholder="name@company.com" size="35" required />
+                <br>
+                <br>
+
+                <label >Password:</label>
+                <input type="password" name="password" size="35" placeholder="minimum 8 characters..." pattern="{8,}" title="at least 8 or more characters" required />
+                <br>
+                <br>
+
+                
+                <label >Company:</label>
+                <input type="text" id="company" name="companyName" placeholder="Your company" size="35" required />
+                <br>
+                <br>
+
+                <label >Door number:</label>
+                <input type="text" id="txtDoor" name="dName" placeholder="D.No" size="35" required />
+                <br>
+                <br>
+
+                <label >Street:</label>
+                <input type="text" id="txtStreet" name="sName" placeholder="Street address" size="35" required />
+                <br>
+                <br>
+
+                <label >City:</label>
+                <input type="text" id="txtCity" name="cName" placeholder="City..." size="35" required />
+                <br>
+                <br>
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <input type="checkbox" name="termsAndCondition" required> I accept the Terms and conditions </input>
+                <br>
+                <br>
+
+                <input type="submit" value="Submit" ng-click="showAddress();" />
+    
+            </div>     
+
+            <script>
+                    var address = angular.module("myForm", []);
+                    address.controller("click", function ($scope) {
+                        $scope.showAddress = function () {
+                            
+                            var door= angular.element(document.querySelector("#txtDoor")).val();
+                            var street= angular.element(document.querySelector("#txtStreet")).val();
+                            var city= angular.element(document.querySelector("#txtCity")).val();
+
+                            alert("D.No: " +door+ ", Street: " +street+ ", City: " +city);
+                        };
+                    });
+            </script>
+
+        </form>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+  </body>
+</html>
